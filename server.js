@@ -11,7 +11,7 @@ connectDB();
 
 
 //server
-const port =3002;
+const port = process.env.PORT||3002;
 const server = express();
 
 //middleware
@@ -21,7 +21,7 @@ server.use(express.urlencoded({extended:true}));
 
 //run server
 server.listen( port, ()=>{
-    console.log(`server is running on port ${port}`);
+    console.log(`server is running on http://localhost:${port}`);
 });
 
 //run database
